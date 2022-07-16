@@ -10,3 +10,17 @@ params:
   socialIcons: # optional
     - name: github
       url: "https://github.com/AlliesChen/"
+menu:
+  main:
+    - identifier: categories
+      name: categories
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 20
+    - identifier: myGithub
+      name: github
+      url: https://github.com/AlliesChen
+      weight: 30

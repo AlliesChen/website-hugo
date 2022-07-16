@@ -31,7 +31,7 @@ cover:
     relative: false # when using page bundles set this to true
     hidden: true # only hide on current single page
 editPost:
-    URL: "https://github.com/AlliesChen"
+    URL: "https://github.com/AlliesChen/website-hugo/blob/main/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 ---
@@ -44,7 +44,7 @@ editPost:
 簡單來說，你只要照著操作指南進行，就能產出部署網站需要的檔案。
 
 - HTML和CSS是標籤語言，分別做為網頁的文字骨架及渲染設定。
-- Go是一種程式語言。
+- [Go](https://go.dev/)是一種程式語言。
 
 ## 建立
 
@@ -66,7 +66,7 @@ editPost:
 
 - 參考文章內提到要把下載下來主題的static、layouts換成主題資料夾內的，但我使用的主題[PaperMod](https://adityatelange.github.io/hugo-PaperMod/)沒有static只有layouts，這部份就只要取代layouts就好。
 
-- 要記得看選擇的主題的GitHub說明來確認如何使用及操作；我一開始想用Doks這個主題，但他似乎有用到Node.js npm，我不能在我的網站資料夾下(C:\Hugo\website-hugo)，使用`hugo server -D`來啟動本地端伺服器(測試用)。
+- 要記得看選擇的主題的GitHub說明來確認如何使用及操作；我一開始想用Doks這個主題，但他似乎有用到Node.js npm，我不能在我的網站資料夾下(`C:\Hugo\website-hugo`)使用`hugo server -D`來啟動本地端伺服器(測試用)。
 
 - 另一方面，在config.toml，或是config.yml（也是取決於選擇的主題設定），那個`theme: <theme_name>`，是取決於抓下來的主題資料夾的名稱的，像Doks這個主題我clone下來是得到my-doks-site（可以改名），然後是用toml格式，我就要寫`theme = "my-doks-site"`。
 
@@ -90,6 +90,32 @@ ShowWordCount: false
 
 然後，可能因為我用的是中文，`ShowReadingTime`和`ShowWordCount`這兩個顯示的數值不太可靠，所以我把它們改為false（不顯示）。
 
-> 部份設定像weight，可以在官網[Front Matter](https://gohugo.io/content-management/front-matter/)的主題找到更詳細的說明。
+> 部份設定像weight，可以在官網[Front Matter](https://gohugo.io/content-management/front-matter/)的主題找到更詳細的說明。（因為有些是主題客製的，就要參考主題的文件說明了）
 
 ## 部署到GitHub
+
+推送部份就如參考文章中所述，但一樣有遇到問題：
+
+GitHub頁面開起來沒有吃到stylesheet，就是純文字，看了console發現有跳錯誤：`Failed to find a valid digest in the 'integrity' attribute for resource css with computed SHA-256 integrity hugo`
+
+這邊借助Google大神，找到了[這個辦法](https://stackoverflow.com/a/65052963/18972098)：
+
+1. 用編輯器打開`head.html`，這邊可能又依主題不同檔案位址不同，PaperMod我是到複製的layouts資料夾(不是themes裡的)，然後partials資料夾。
+
+2. 把`integrity`照上面Stackoverflow的回答，改為`""`：（不只一條有integrity這個屬性，但我只動rel="preload stylesheet"這條的就可以了）
+   
+   ```html
+   <link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" integrity="" rel="preload stylesheet" as="style">
+   ```
+
+另外，我有用參考文章中提及的另一篇參考所寫到，再開一個GitHub repo，放build到public前的原始檔案；因為PaperMod這個主題的模板文章，可以在各篇文章標題作者旁用一個Suggest Change的連結，目的就如字面上所示，但因為public做出來都是html了，連過去也不好閱讀和發pull request，乾脆再開一個放原始的.md檔們。
+
+- 在public外的這個資料夾，我新增了`.gitignore`，把public和themes排除在推送的內容外，因為public的內容已經在blog部署的repo上了，而themes的內容都是抓下來的，沒必要推上去。
+
+## 深入學習
+
+[Hugo - Static Site Generator | Tutorial - YouTube](https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3) -- 這個影片清單有更多關於Hugo設定的說明。
+
+## 題外話：Markdown編輯器
+
+因為Hugo使用的檔案格式是.md（markdown），除了最強編輯器VSCode可以編輯外，我也會使用[MarkText](https://github.com/marktext/marktext)以及[Obsidian](https://obsidian.md/)這兩款編輯器；介面比VSCode更像個文件編輯器，MarkText用來開單個檔案，因為Obsidian需要透過指定資料夾的方式才能開檔案，但也因此Obsidian很適合建立及管理文件庫，端看使用習慣。
