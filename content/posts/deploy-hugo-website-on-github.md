@@ -72,7 +72,7 @@ editPost:
 
 ## 使用模板文章
 
-可能也取決於下載的主題，我使用的佈景主題PaperMod的[文章模板](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-installation/#sample-pagemd)；將這個內容複製並依照文章指示放到archetypes/post.md內，就可以用`hugo new --kind posts <filename>.md`這個指令在content資料夾下產生檔案，再移到posts資料夾內就可以在網站中看到了。
+可能也取決於下載的主題，我使用的佈景主題PaperMod的[文章模板](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-installation/#sample-pagemd)；將這個內容複製並依照文章指示放到archetypes/post.md內，就可以用`hugo new --kind post <filename>.md`這個指令在content資料夾下產生檔案，再移到posts資料夾內就可以在網站中看到了。
 
 他有一些設定要注意，像是date，要把UTC的時區寫正確，像台灣是`+08:00`，如果沒寫的話，好像會被認為是未來貼文，所以就不會顯示在網站上。（待測試：感覺可以用來預約發文？）
 

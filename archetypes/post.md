@@ -1,8 +1,8 @@
 ---
-title: "My 1st post"
-date: 2022-07-15T18:30:00+08:00
+title: "{{ replace .Name "-" " " | title }}"
+date: {{ .Date }}
 # weight: 1
-# aliases: ["/first"]
+# aliases: ["/{{ replace .Name "-" " " | title }}"]
 tags: ["first"]
 author: "Me"
 # author: ["Me", "You"] # multiple authors
