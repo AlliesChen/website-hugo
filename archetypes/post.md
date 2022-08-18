@@ -4,7 +4,7 @@ date: {{ .Date }}
 # weight: 1
 # aliases: ["/{{ replace .Name "-" " " | title }}"]
 tags: ["first"]
-author: "Me"
+author: "Yu-Pang"
 # author: ["Me", "You"] # multiple authors
 showToc: true
 TocOpen: false
