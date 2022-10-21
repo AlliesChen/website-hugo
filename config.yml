@@ -3,6 +3,7 @@ languageCode: zh-tw
 title: YP's Dev Memo
 theme: PaperMod
 params:
+  math: true
   homeInfoParams:
     Title: YP的開發備忘
     Content: Hi! 我是個未滿一年的轉職仔，目前擔任前端工程師，因為技術太多，又變化的太快了，所以做了這個部落格來放筆記。
