@@ -267,24 +267,24 @@ describePerson(alex)
 
 ## Object Literal And Structural Type System
 
-這個不是我發現的，而是社群中看到的討論，做個筆記紀錄：[TS Playground](https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABMMBGAFAB1QLkQb0TAEMBbAUzwGcoAnGMAcwF8BKAgWAChFEIEqcADbkAdELiMsqVgG5uzbt1CRYCZGABMWTXkIkK1Og0YAaRMUaUiIUgCNytRG048NGTJrkKlXfmBpETABmRABeAiIyawAiYniY80trVE1QxS5lNHR9aLw4hKSrPFT07y4UD2Dyypyow0QC4kSLYsRS5wsqAgNrGnomIuswWwdaNlkgA)
+這個不是我發現的，而是社群中看到的討論，做個筆記紀錄：[TS Playground](https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABAWzgJzDMBzAwgCwFMIBrACgCM1CBDE4GgZygC5EBvRMG5Qt5tFmwBfAJQcAsAChEiCAkZwANoQB0SuNkrU6DZqIDc04dOmhIsBFzgICxckvAR8bTt178ognABpEAB0EIPi4QZApCNEQxSRkUdEwcO1IyR0h8Q2NTKXkwZkR0ABNIxABeDi4eEIAiYEEoKBpG6r9AmGC2ACYAVgAGaOzUDCFk8jcqtlr6xubWoJCe-rEjKSHEvCIUosjM1YSRzbHKj0QpmAammhaA+a6+6MQmDncQgSE59pCwMIi0ZaA)
 
 ```typescript
-function fn1(p1: { name: string}) {
-  console.log(p1);
+function morningCheck(breakfast: { name: string}) {
+  console.log(breakfast);
 }
 
-function fn2(p2: { name: string, age: number }) {
-  fn1(p2);
+function noonCheck(lunch: { name: string, price: number }) {
+  morningCheck(lunch);
 }
 
-const p3 = { name: "aaa", age: 123 }
+const order = { name: "frittata", price: 250 }
 
 // error - Object literal may only specify known properties
-fn1({ name: "aaa", age: 123 });
+morningCheck({ name: "frittata", price: 250 });
 
-fn1(p3);
-fn1({ name: "aaa", age: 123 } as {name: string, age: number});
+morningCheck(order);
+morningCheck({ name: "frittata", price: 250 } as {name: string, price: number});
 ```
 
 把這個錯誤描述拿去 Google 可以看到 Stackoverflow [這則回答](https://stackoverflow.com/a/31816062/18972098)提到：
@@ -293,7 +293,7 @@ fn1({ name: "aaa", age: 123 } as {name: string, age: number});
 
 可以再對照一下 TypeScript 1.6 的[更新說明](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-6.html#stricter-object-literal-assignment-checks)。
 
-那麼關於 `fn(p2)` 這個用法不會報錯，可以參考：
+那麼關於 `morningCheck(lunch)` 這個用法不會報錯，可以參考：
 
 > The shape-matching only requires a subset of the object's fields to match.
 > 
