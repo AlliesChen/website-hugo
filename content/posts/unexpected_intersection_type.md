@@ -166,4 +166,50 @@ function Beep<T extends Foobar>(props: Props<T>) {
 }
 ```
 
+## 網友提供的方法
+
+針對一開始的 React 問題，這兩個方法比較單純，但在 inline type 的提示上就沒有上面的方法來的詳細 ，把滑鼠移到 `value` 和 `setValue` 上可以看到在這三種方法上的差別：
+
+```typescript
+<Beep value={foo} setValue={setFoo} />
+<Beep value={bar} setValue={setBar} />
+```
+
+使用文章中提到的 `extends` 方法的會是：
+
+```typescript
+(JSX attribute) Props<{ one: number; two: number; }>.setValue: React.Dispatch<React.SetStateAction<{
+    one: number;
+    two: number;
+}>>
+```
+
+網友提供的一種方法是簡單給 `useState` type parameter：
+
+```typescript
+const [foo, setFoo] = React.useState<Foobar>({ one: 1, two: 2 });
+const [bar, setBar] = React.useState<Foobar>({ three: 3, four: 4 });
+```
+
+Inline type 會是：
+
+```typescript
+(JSX attribute) Props.setValue: React.Dispatch<React.SetStateAction<Foobar>>
+```
+
+另一種方法是把 `type Foobar` 的 `setValue` property 攤開來：[codesandbox link](https://codesandbox.io/s/react-setstate-problem-with-typescript-easy-ans-nk1n3b?file=/src/App.tsx)
+
+```typescript
+interface Props {
+    value: Foobar;
+    setValue: ((value: Foo) => void) | ((value: Bar) => void);
+}
+```
+
+`setValue` 的 inline type 會是：
+
+```typescript
+(JSX attribute) Props.setValue: ((value: Foo) => void) | ((value: Bar) => void)
+```
+
 文章就到這邊，謝謝閱讀😄
