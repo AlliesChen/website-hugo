@@ -40,7 +40,7 @@ editPost:
 
 > 小提示：使用 `React.memo`，整理筆記發現有記過這個，但看來真的只是寫下來 😅
 
-事後亡羊補牢時看到 Debug Bear 的[這篇文章](https://www.debugbear.com/blog/react-rerenders#children-props)；文章中漸進式的說明與例子終於讓我比較看懂這三個方法對重新渲染的影響，另外也提到了 list 元素中，React 會提示需要提供給元件的 `key` 屬性也是影響是否重新渲染的因子之一。
+事後亡羊補牢時看到 Debug Bear 的[這篇文章](https://www.debugbear.com/blog/react-rerenders)；文章中漸進式的說明與例子終於讓我比較看懂這三個方法對重新渲染的影響，另外也提到了 list 元素中，React 會提示需要提供給元件的 `key` 屬性也是影響是否重新渲染的因子之一。
 
 我參考文章中的例子，寫了個應該算是互動式的應用範例：
 
@@ -119,7 +119,7 @@ const Selection = React.memo(function Selection({style, setAnswer}) {
 });
 ```
 
-這裡的問題與 `useCallback` 該節中提到的一樣，因為 `childStyle` 在 `Question5` 的 `answer` 狀態被子元件觸發 `setAnswer` 給改變而重新渲染，又物件裡的值會依據 `answer` 的值有所不同，現在 React 認為它不一樣了。
+這裡的問題與 `useCallback` 該節中提到的一樣，因為 `Question5` 的 `answer` 狀態被子元件觸發 `setAnswer` 給改變而重新渲染，現在 React 認為 `childStyle` 不一樣了 (因為是新造的)。
 
 我們可以使用 `useMemo` 來記住這個物件，並且跟 `useCallback` 一樣指定 dependencies：
 
@@ -136,7 +136,11 @@ export default function Question6() {
 }
 ```
 
-可以注意到，因為使用 `setAnswer` 做為 dependencies，`childStyle` 並不會在 `Question6` 重新渲染時被改變，雖然子元件 `Selection` 沒有被重新渲染了，但也因此 inline style 沒有改變，這可能不是好的 UX 表現。
+可以注意到，因為使用 `setAnswer` 做為 dependencies，`childStyle` 並不會在 `Question6` 重新渲染時被改變，雖然子元件 `Selection` 沒有被重新渲染了，但也因此 inline style 沒有改變，這可能不是好的 UX 表現，函式的用法也比較不合理。
+
+---
+
+開頭提到來自 Debug Bear 的 [參考文章的這個段落](https://www.debugbear.com/blog/react-rerenders#passing-objects-as-props)，在例子上的範例們是更為合理的，我將 `childStyle` 放在 Question 函式的 scope 內，以及使用 `setAnswer` 做為 `useMemo` 的 dependency 都只是為了保持題目結構上的一致性。
 
 ## List Elements' Key Property
 
