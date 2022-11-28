@@ -140,7 +140,7 @@ export default function Question6() {
 
 ---
 
-開頭提到來自 Debug Bear 的 [參考文章的這個段落](https://www.debugbear.com/blog/react-rerenders#passing-objects-as-props)，在例子上的範例們是更為合理的，我將 `childStyle` 放在 Question 函式的 scope 內，以及使用 `setAnswer` 做為 `useMemo` 的 dependency 都只是為了保持題目結構上的一致性。
+開頭提到來自 Debug Bear，[文章的這個段落](https://www.debugbear.com/blog/react-rerenders#passing-objects-as-props)所寫的範例們是應用上更為合理的，我將 `childStyle` 放在 Question 元件的 scope 內，以及使用 `setAnswer` 做為 `useMemo` 的 dependency 都只是為了保持題目結構上的一致性。
 
 ## List Elements' Key Property
 
