@@ -1,6 +1,7 @@
 ---
 title: "那些網頁開發的名詞"
 date: 2022-07-16T19:20:00+08:00
+lastmod: 2023-06-22T14:51:00+08:00
 # weight: 1
 # aliases: ["/web-dev-terms"]
 tags: ["murmur"]
@@ -127,13 +128,15 @@ JavaScript有很多函式庫(library)可用，如[jQuery](https://jquery.com/)�
 
 網頁應用也需要一個暫存系統來減少資料庫的負載，並處理大量的流量(traffic)，Memcached和Redis是最廣為使用的暫存系統。
 
-### Web API
+### Web service 和 API
 
-分兩個層面解釋，首先是API -- Application Programming Interface(API)是一個被清楚定義的辦法(method)，用來處理各個不同軟體元件間的溝通。
+> The terms *web service* and *API* are used interchangeably. However, APIs are the broader category. Web services are a special type of API.-- [#What are the similarities between SOAP and REST | AWS](https://aws.amazon.com/compare/the-difference-between-soap-rest/)
 
-基本上可以聯想成是電腦的那些插孔，USB你可用插隨身碟，HDMI可以接螢幕；程式中會寫你要怎麼呼叫這支程式，比如JavaScript的`console.log(msg)`，可以讓你印出msg在瀏覽器的console(按F12可以看到)中，但你不必真的知道console.log是怎麼運作的(怎麼發指令給瀏覽器的)。
+分兩個層面解釋，首先是API-- *Application Programming Interface* 是一個被清楚定義的辦法(method)，用來處理各個不同軟體元件間的溝通。
 
-而Web API，則是把對象從程式改成網站，直接看例子好了，[這個網站](https://swapi.dev/)提供星際大戰角色資訊的API，把網站提供的[範例(網址)](https://swapi.dev/api/people/1/)貼給瀏覽器後，可以看到框裡有落落長的文字，但它似乎是有規律(格式)的，也就是上面有提到的JSON格式：
+基本上可以聯想成是電腦的那些插孔，USB你可用插隨身碟，HDMI可以接螢幕；程式中會寫你要怎麼呼叫這支程式，比如 JavaScript 的 `console.log(msg)`，可以讓你印出 msg 在瀏覽器的 console (按 F12 可以看到)中，但你不必真的知道 console.log 是怎麼運作的(怎麼發指令給瀏覽器的)。
+
+而 web service，則是把對象從程式改成網站，直接看例子好了，[這個網站](https://swapi.dev/)提供星際大戰角色資訊的 API，把網站提供的[範例(網址)](https://swapi.dev/api/people/1/)貼給瀏覽器後，可以看到框裡有落落長的文字，但它似乎是有規律(格式)的，也就是上面有提到的JSON 格式：
 
 ```json
 {

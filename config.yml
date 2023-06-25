@@ -11,8 +11,6 @@ params:
   socialIcons: # optional
     - name: github
       url: "https://github.com/AlliesChen/"
-    - name: linkedin
-      url: "https://www.linkedin.com/in/ypchen-1057a5137/"
     - name: dev
       url: "https://dev.to/allieschen"
       
