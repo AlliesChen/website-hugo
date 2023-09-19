@@ -42,7 +42,7 @@ editPost:
 
 ## TL;DR
 
-成果：https://codesandbox.io/s/page-flippable-book-5h5ktm?file=/src/Page.tsx
+成果: https://codesandbox.io/s/page-flippable-book-5h5ktm?file=/src/Page.tsx
 
 ## 實踐方式
 
