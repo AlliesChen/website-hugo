@@ -28,3 +28,8 @@ menu:
       name: github
       url: https://github.com/AlliesChen
       weight: 30
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

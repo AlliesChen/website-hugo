@@ -69,9 +69,9 @@ editPost:
 
 這個作法下 `backface-visibility: hidden` 不管用；也沒有 rotate 能用，翻頁效果有奇怪的抖動。
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="Test form input" src="https://codepen.io/allieschen/embed/NWOQxwx?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="300" style="width: 100%;" scrolling="no" title="page-flip animation with matrix" src="https://codepen.io/allieschen/embed/NWOQxwx?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/allieschen/pen/NWOQxwx">
-  Test form input</a> by YPChen (<a href="https://codepen.io/allieschen">@allieschen</a>)
+  page-flip animation with matrix</a> by YPChen (<a href="https://codepen.io/allieschen">@allieschen</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
@@ -108,7 +108,43 @@ React 強大的生態系，有好多很棒的 animation library 可以選，這�
 
 ## 使用 react-spring 實踐翻頁動畫
 
-首先參考了 react-spring 官網的[這個例子](https://codesandbox.io/s/cju2d?file=/src/App.tsx)做為轉場實踐的基底；除了 `rotateY`，`opacity` 變化能讓翻轉效果看起來更自然。
+首先參考了 react-spring 官網的[這個例子](https://codesandbox.io/s/cju2d?file=/src/App.tsx)做為轉場實踐的基底，並把頁面與圖面的動畫分開；也就是，翻頁與圖片變化是分開的 `useSpring` 管理：
+
+- `rotateY`-- 翻頁效果都靠它 
+- `opacity`-- 讓翻轉效果看起來更自然
+
+然後是不在 `useSpring` 管理的：
+
+- `z-index`-- 正反面圖片的變化是它
+- `transform: perspective`-- 這個提供視角的變化，讓翻頁效果從消失點延伸，視覺上更擬真
+- `transformOrigin`-- 改變翻頁的軸心
+
+```tsx
+// @/App.tsx
+import { useState } from "react";
+import { useSpring, animated } from "@react-spring/web";
+
+const [flipped, setFlipped] = useState(false);
+const pageStyle = useSpring({
+  rotateY: 0,
+  config: { mass: 5, tension: 500, friction: 150 },
+  touchAction: "none"
+});
+
+return (
+    <animated.div
+      style={{
+        ...pageStyle,
+        transformOrigin: "left",
+        transform: "perspective(600px)",
+        zIndex: flipped ? 10 + zIndex : 100 - zIndex
+      }}
+      className="page"
+    >
+      ...the pictures
+    </animated.div>
+)
+```
 
 > 關於 config 屬性的作用，引用自 [Getting started with react-spring: physics, API, performance - Apptension Blog](https://www.apptension.com/blog-posts/getting-started-with-react-spring-spring-physics-api-performance)
 > - Mass (when mass is higher, the element needs more velocity to be moved and more time to stop)
@@ -134,8 +170,36 @@ React 強大的生態系，有好多很棒的 animation library 可以選，這�
 
 參考 use-gesture 官網的[這個範例](https://use-gesture.netlify.app/docs/state/#movement-and-offset)，提供了跟 `useSpring` 一起使用的作法。
 
-接著就慢慢試怎麼樣的屬性和邏輯呈現出來的翻頁效果可以接受，又不會太複雜。
+接著就慢慢試怎麼樣的屬性和邏輯呈現出來的翻頁效果可以接受，又不會太複雜😵‍💫
+
+> 注意為了拿 `useSpring` 的 api 物件給進 `useDrag` 裡操作，參數會從物件改為一個箭頭函式
+
+```tsx
+import { useState } from "react";
+import { useDrag } from "@use-gesture/react";
+
+const [flipped, setFlipped] = useState(false);
+const [pageStyle, api] = useSpring(() => ({
+  rotateY: 0,
+  config: { mass: 5, tension: 500, friction: 150 },
+  touchAction: "none"
+}));
+const bind = useDrag(({ movement: [movX], cancel, dragging }) => {
+  // console.log(movX, pageStyle.rotateY.get());
+  const currentRY = pageStyle.rotateY.get();
+  if (currentRY > -60) {
+    api.start({ rotateY: 0 });
+    setFlipped(false);
+  }
+  if (currentRY <= -60 && (movX < 0 || !dragging)) {
+    api.start({ rotateY: -180 });
+    setFlipped(true);
+  } else if (dragging && currentRY <= 0) {
+    api.start({ rotateY: currentRY + movX });
+  }
+});
+```
 
 > 一個小插曲是要注意圖片載入速度，會影響翻頁動畫的流暢度(會卡住)
 
-最後，打開封面後，書本寬度改變，一來會蓋到邊界超出畫面，二來沒有置中，所以在 `FlippablePage` 加入一個 `onFlipped` 屬性透過 `useEffect` 來觸發 callback，做 `translateX` 的改變。
+最後，打開封面後，書本寬度改變，一來會蓋到邊界超出畫面，二來沒有置中，所以在 `FlippablePage` 加入一個 `onFlipped` 屬性透過 `useEffect` 來觸發 callback-- `onFlipped`，做 `translateX` 的改變。
