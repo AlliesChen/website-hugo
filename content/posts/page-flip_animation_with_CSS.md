@@ -120,11 +120,11 @@ React 強大的生態系，有好多很棒的 animation library 可以選，這�
 - `rotateY`-- 翻頁效果都靠它 
 - `opacity`-- 讓翻轉效果看起來更自然
 
-然後是不在 `useSpring` 管理的：
+然後是不在 `useSpring` 管理的 CSS 屬性，這裡要注意，他們要在 `pageStyle` 前，不然會沒有效果：
 
 - `z-index`-- 正反面圖片的變化是它
-- `transform: perspective`-- 這個提供視角的變化，讓翻頁效果從消失點延伸，視覺上更擬真
 - `transformOrigin`-- 改變翻頁的軸心
+- `transform: perspective`-- 這個提供視角的變化，讓翻頁效果從消失點延伸，視覺上更擬真
 
 ```tsx
 // @/App.tsx
@@ -141,10 +141,10 @@ const pageStyle = useSpring({
 return (
     <animated.div
       style={{
-        ...pageStyle,
+        zIndex: flipped ? 10 + zIndex : 100 - zIndex,
         transformOrigin: "left",
         transform: "perspective(600px)",
-        zIndex: flipped ? 10 + zIndex : 100 - zIndex
+        ...pageStyle
       }}
       className="page"
     >
