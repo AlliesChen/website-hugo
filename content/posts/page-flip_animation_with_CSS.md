@@ -44,8 +44,12 @@ editPost:
 
 成果: https://codesandbox.io/s/page-flippable-book-5h5ktm?file=/src/Page.tsx
 
-## 實踐方式
-
+<iframe src="https://codesandbox.io/embed/page-flippable-book-5h5ktm?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="page-flippable book"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
 - 透過 `position: relative/absolute` 來堆疊書頁的正反面
 - 用 `z-index` 切換堆疊的順序
 - [react-spring](https://www.react-spring.dev/) 控制 `rotateY`、`opacity` 做翻頁轉場
@@ -68,6 +72,8 @@ editPost:
 這邊，我認為應用 [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) 有搞頭，又看到 MDN 裡的範例有 `matrix` (最近剛好在看[線性代數](https://www.3blue1brown.com/topics/linear-algebra)的教學影片)，拿[這個網站](http://www.eion.com.tw/Blogger/?Pid=1168)沙盤推演了一下，我以為能透過操作`scaleX` 和 `skewY` 的矩陣轉換來做出翻頁效果殊不知...
 
 這個作法下 `backface-visibility: hidden` 不管用；也沒有 rotate 能用，翻頁效果有奇怪的抖動。
+
+Demo: https://codepen.io/allieschen/pen/NWOQxwx
 
 <iframe height="300" style="width: 100%;" scrolling="no" title="page-flip animation with matrix" src="https://codepen.io/allieschen/embed/NWOQxwx?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/allieschen/pen/NWOQxwx">
