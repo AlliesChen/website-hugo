@@ -51,9 +51,15 @@ editPost:
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-- 透過 `position: relative/absolute` 來堆疊書頁的正反面
+- 透過 `translateZ` 做出書頁的正反面
+
+> <u>2023/9/22</u>
+> 基於前端社群網友的建議，我把原先用 `opacity` 變換做出的頁面正反面，換成靜態、單純加在 CSS class-- `back` 中的 `translateZ`，另外，為了讓它能正確作用，也需要在 `page` 這個 CSS class 中加入 `transform-style: preserve-3d`，如此一來，應該多少能減輕瀏覽器的運算負擔。
+
+
+- 透過 `position: relative/absolute` 來堆疊書頁的上下一頁
 - 用 `z-index` 切換堆疊的順序
-- [react-spring](https://www.react-spring.dev/) 控制 `rotateY`、`opacity` 做翻頁轉場
+- [react-spring](https://www.react-spring.dev/) 控制 `rotateY` 做翻頁轉場
 - 配合 [`perspective`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/perspective) 屬性改變視角增添立體感
 - [use-gesture](https://use-gesture.netlify.app/) 加入拖曳翻頁功能
 
@@ -118,11 +124,10 @@ React 強大的生態系，有好多很棒的 animation library 可以選，這�
 首先參考了 react-spring 官網的[這個例子](https://codesandbox.io/s/cju2d?file=/src/App.tsx)做為轉場實踐的基底，並把頁面與圖面的動畫分開；也就是，翻頁與圖片變化是分開的 `useSpring` 管理：
 
 - `rotateY`-- 翻頁效果都靠它 
-- `opacity`-- 讓翻轉效果看起來更自然
 
 然後是不在 `useSpring` 管理的 CSS 屬性，這裡要注意，他們要在 `pageStyle` 前，不然會沒有效果：
 
-- `z-index`-- 正反面圖片的變化是它
+- `z-index`-- 書本的上下一頁正確堆疊的關鍵是它
 - `transformOrigin`-- 改變翻頁的軸心
 - `transform: perspective`-- 這個提供視角的變化，讓翻頁效果從消失點延伸，視覺上更擬真
 
