@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Posts | YP&#39;s Dev Memo</title>
+<meta name="keywords" content="">
+<meta name="description" content="Posts - YP&#39;s Dev Memo">
+<meta name="author" content="">
+<link rel="canonical" href="https://AlliesChen.github.io/posts/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.c5ad9f205171fab820252a87a0292578dcaa85c950f40ab21addf6cb9611c26a.css" integrity="" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://AlliesChen.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://AlliesChen.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://AlliesChen.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://AlliesChen.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://AlliesChen.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://AlliesChen.github.io/posts/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript> <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"
+  integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js"
+  integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true },
+      ],
+      
+      throwOnError: false,
+    });
+  });
+</script>
+ 
+<meta property="og:title" content="Posts" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://AlliesChen.github.io/posts/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:description" content=""/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://AlliesChen.github.io/posts/"
+    }
+  ]
+}
+</script>
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://AlliesChen.github.io/" accesskey="h" title="YP&#39;s Dev Memo (Alt + H)">YP&#39;s Dev Memo</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://AlliesChen.github.io/categories/" title="categories">
+                    <span>categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://AlliesChen.github.io/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/AlliesChen" title="github">
+                    <span>github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Posts
+  </h1>
+</header>
+
+<article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://AlliesChen.github.io/images/a_computer_programmer.jpg" alt="a computer grammer sitting on before a white board">
+</figure>
+  <header class="entry-header">
+    <h2>開始 CS61B 學習資料結構及演算法
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>因為剛開始要啟動這個課程的資源時繞了一點路，想簡單分享一下：
+可以上哪個版本？ 怎麼提交作業？ 前言 CS61B 是 UC Berkeley 在電腦科學的「入門課」，關於它的討論在 PTT、一畝三分地等論壇，或是直接 google 都可以找到學習心得的分享，就不多在此贅述這門課程的特點。
+課程以英文以及 Java 程式語言來教學，但不要求有 Java 基礎，課程中會逐步帶到。反倒是因為此課有前置課程– CS61A，以 Python 程式語言教學電腦科學基礎的課程，在 CS61B 中會常聽到教授以 Python 作為對比來幫助理解。
+延伸閱讀：CS61A 跟 CS61B 的差別
+可以上哪個版本？ 首先可以打開瀏覽器，搜尋：CS61B，就能看到最新一季的課程頁面；以這篇文章撰寫的時間是 CS61B Spring 2024，在看到網頁中 Course Info 這個頁面的最下面，有個 “Auditing CS61B” 的條目– 提到目前可以使用的 “public” autograder 是 Spring 2021。這門課程是透過 Gradescope 的服務來做自動化評分，而此頁提供的課程碼– MB7ZPY，開啟的畫面如下圖。
+上圖中，可以看到還有個 CS61B Spring 2019，那就是非 “public” 的課程碼開啟的– 如果是直接從課程網站的 week 1 開始跟著做，基本上影片都能看，直到跟著 Lab 1 的教學到了註冊 Gradescope 並開始了第一個提交才會發現…提交會失敗呀😅。
+怎麼提交作業？ 先回到有公開評分器的 CS61B SP21 的頁面，跟著 Lab 1 的說明：...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-03-13 20:34:04 +0800 CST'>March 13, 2024</span>&nbsp;·&nbsp;Yu-Pang</footer>
+  <a class="entry-link" aria-label="post link to 開始 CS61B 學習資料結構及演算法" href="https://AlliesChen.github.io/posts/start_cs61b/"></a>
+</article>
+
+<article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://AlliesChen.github.io/images/a_child_waves_hand_in_spring.jpg" alt="">
+</figure>
+  <header class="entry-header">
+    <h2>透過 CSS 製作書本翻頁效果
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>近期想透過「翻頁」這個互動方式來做一個 web 小遊戲，過程中發現意外地不好實現。
+這篇文章需要讀者對 React 這個前端框架及 CSS 的 transition 屬性的應用有基本的了解，成果及原始碼是建立於這兩個技術之上的，內文會大略地對實踐的方式說明，但不會詳細地提及所使用的框架及函式庫確切 API 的功能及用法。
+TL;DR 成果: https://codesandbox.io/s/page-flippable-book-5h5ktm?file=/src/Page.tsx
+透過 translateZ 做出書頁的正反面 2023/9/22 基於前端社群網友的建議，我把原先用 opacity 變換做出的頁面正反面，換成靜態、單純加在 CSS class– back 中的 translateZ，另外，為了讓它能正確作用，也需要在 page 這個 CSS class 中加入 transform-style: preserve-3d，如此一來，應該多少能減輕瀏覽器的運算負擔。
+透過 position: relative/absolute 來堆疊書頁的上下一頁 用 z-index 切換堆疊的順序 react-spring 控制 rotateY 做翻頁轉場 配合 perspective 屬性改變視角增添立體感 use-gesture 加入拖曳翻頁功能 讓套件再次偉大 首先我想到的是有沒有現成的(免費)翻頁書效果套件可以用，
+turn.js– 建立在 jQuery 之上的套件，快十年沒更新了，考量後續擴充功能可能有困難，暫不考慮。 StPageFlip– 效果很擬真，從 demo 看起來使用體驗流暢；而且有 React 版本，但是，從 commits 看來有兩年沒更新了，以 front-end 的迭代速度加上，擔心搭 React 18 會不會出現不明的坑因此沒有使用。 後續又看了幾個套件(比較新的)好像也是搭在這些套件上實踐出來，覺得難以在短期理解其運作方式，怕未來不好改。...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-09-19 23:29:44 +0800 CST'>September 19, 2023</span>&nbsp;·&nbsp;Yu-Pang</footer>
+  <a class="entry-link" aria-label="post link to 透過 CSS 製作書本翻頁效果" href="https://AlliesChen.github.io/posts/page-flip_animation_with_css/"></a>
+</article>
+
+<article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://AlliesChen.github.io/%3Cimage%20path/url%3E" alt="">
+</figure>
+  <header class="entry-header">
+    <h2>有趣的 TypeScript 型別用法與機制 Part 2
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>繼上一篇 – 有趣的 TypeScript 型別用法與機制，這次閱讀到 Gabriel Vergnaud 的 Type-Level TypeScript 這系列文章的第 1 到 4 章，屬於免費閱讀的章節，讓我重新認識了 TypeScript (以下簡稱 TS) 的型別系統；該系列文章中有提供即時的程式碼編輯區塊，每一章最後都有小測驗，閱讀與學習的體驗都很棒，非常值得一看。
+這篇文章的內容是我個人針對這系列做的一個學習筆記，在寫這篇文章時也意外發現其實 Gabriel 提到的內容，TS 官網上都有條目寫到；過去只是讀過，從沒理解過😅。
+Levels of Language 貫穿該系列文章的第一個重點；language of values (value-level) 和 language of types (type-level)，JavaScript (以下簡稱 JS) 因為(還)沒有型別的語法所以 100% 是 value-level 語言。
+還沒有，但正在提案中的型別註釋– tc39/proposal-type-annotations: ECMAScript proposal for type syntax that is erased - Stage 1
+如果對 TS 實作不陌生，有個錯誤就是：&#39;Somthing&#39; only refers to a type, but is being used as a value here– TS Playground；正是這個 value 和 type 的概念。於是乎，TS 不只是給 JS 寄住的外殼，而是用來撰寫型別，type-level 程式語言。...</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-12-16 15:01:10 +0800 CST'>December 16, 2022</span>&nbsp;·&nbsp;Yu-Pang</footer>
+  <a class="entry-link" aria-label="post link to 有趣的 TypeScript 型別用法與機制 Part 2" href="https://AlliesChen.github.io/posts/have_fun_with_typescript_part2/"></a>
+</article>
+
+<article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://AlliesChen.github.io/%3Cimage%20path/url%3E" alt="">
+</figure>
+  <header class="entry-header">
+    <h2>如何避免 React 重新渲染元件
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>因為面試被問倒 useCallback、useMemo 的用途和用法，還有如何避免 React 做無謂的重新渲染 (re-render)，特別是最後一個當下我完全沒有頭緒…
+小提示：使用 React.memo，整理筆記發現有記過這個，但看來真的只是寫下來 😅
+事後亡羊補牢時看到 Debug Bear 的這篇文章；文章中漸進式的說明與例子終於讓我比較看懂這三個方法對重新渲染的影響，另外也提到了 list 元素中，React 會提示需要提供給元件的 key 屬性也是影響是否重新渲染的因子之一。
+我參考文章中的例子，寫了個應該算是互動式的應用範例：
+react-re-render - StackBlitz
+範例中因為版面有限，主要透過題目中的簡短說明，期望使用者配合閱讀程式碼，及程式碼中設定 console.log 印出的資訊來瞭解這四個主題 – 總共有 9 個問題。
+這篇文章則是進一步描述每個主題的癥結點，提取出關鍵的程式碼部份做說明 (因此會與實際範例中的程式碼有差異)，但不會細部的去分析這些方法原始碼的運作概念 (因為我也還不懂)。
+React.memo 問題 1 及問題 2 是針對 React.memo 的應用，
+// @filename: Question1.tsx export default function Question1() { const [answer, setAnswer] = useState&lt;boolean | null&gt;(null); return &lt;Selection setAnswer={setAnswer} /&gt; } 因為 Selection 有設定 onClick 會觸發 setAnswer 改變 Question1 元件 answer 的值，因此造成整個元件重新更新。...</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-11-27 21:56:57 +0800 CST'>November 27, 2022</span>&nbsp;·&nbsp;Yu-Pang</footer>
+  <a class="entry-link" aria-label="post link to 如何避免 React 重新渲染元件" href="https://AlliesChen.github.io/posts/react_re-render/"></a>
+</article>
+
+<article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://AlliesChen.github.io/%3Cimage%20path/url%3E" alt="">
+</figure>
+  <header class="entry-header">
+    <h2>Debounce 和 Throttle
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>針對像是輸入、鼠標移動，和頁面滾動…等可能在短時間被使用者大量觸發的事件做觸發限制，
+debounce 是群組短時間觸發的多個事件成一次執行的動作 throttle 是觸發事件後進入冷卻時間 避免網頁在短時間內要對大量觸發的事件做出反應，而花費過多處理效能。
+Live demo and source code on stackblitz </p>
+  </div>
+  <footer class="entry-footer"><span title='2022-11-19 23:30:06 +0800 CST'>November 19, 2022</span>&nbsp;·&nbsp;Yu-Pang</footer>
+  <a class="entry-link" aria-label="post link to Debounce 和 Throttle" href="https://AlliesChen.github.io/posts/debounce_and_throttle/"></a>
+</article>
+
+<article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://AlliesChen.github.io/%3Cimage%20path/url%3E" alt="">
+</figure>
+  <header class="entry-header">
+    <h2>有趣的 TypeScript 型別用法與機制
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>這篇文章需要閱讀者對於 TypeScript (以下簡稱 TS) 及 JavaScript (以下簡稱 JS) 的語法有基礎的認知，入門可以參考 TS 官網的 Get Started 並選擇適合你的章節開始閱讀。
+這篇文章中 Generics、Error Type in Catch 和 Utility Types 是 Matt Pocock 超讚的 TS 教學 - Total TypeScript ，在 Beginner’s TypeScript 課程中有用到的。這些範例為了方便我有精簡修改程式碼來說明，完整程式邏輯可以看 Matt 的原始教學，有提供可以互動的範例唷 (透過像 Jest 測試的方式)。
+Generics 可以給 constructor function 加上 &lt;type parameter&gt; 來定義可加入的值 (原教學中用 Set 做例子)，這邊給進 new Map() 的是要求 &lt;key, value&gt; 的型別：TS Playground
+const beverageOrder = new Map&lt;string, number&gt;(); beverageOrder.set(&#39;coffee&#39;, 1); // @ts-expect-error beverageOrder.set(1, &#39;coffee&#39;); Error Type In Catch Try &amp; catch 中，catch 的 e 參數是什麼型別呢？TS Playground...</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-11-03 17:39:03 +0800 CST'>November 3, 2022</span>&nbsp;·&nbsp;Yu-Pang</footer>
+  <a class="entry-link" aria-label="post link to 有趣的 TypeScript 型別用法與機制" href="https://AlliesChen.github.io/posts/have_fun_with_typescript/"></a>
+</article>
+
+<article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://AlliesChen.github.io/%3Cimage%20path/url%3E" alt="">
+</figure>
+  <header class="entry-header">
+    <h2>JWT簡介 - 使用Node.js
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>關於這篇 JWT 的說明比較偏向我個人的筆記，節錄及參考了下方連結中的內容，拜訪連結文章會有更詳盡完整的資訊：
+JWT 官方的 Introduction to JSON web Tokens
+The Ultimate Guide to handling JWTs on frontend clients (GraphQL) 前段介紹了 JWT 是什麼，中後段則是使用流程與實踐，不過是搭配GraphQL，這裡不會提到。
+這則推特貼文圖解了JWT的結構與基本的驗證流程。
+JWT 是 JSON Web Token 的縮寫，這個 JSON 是一種資料傳輸格式，像是：
+{ &#34;sub&#34;: &#34;1234567890&#34;, &#34;name&#34;: &#34;John Doe&#34;, &#34;iat&#34;: 1516239022 } JWT 結構 JWT 是由三組字串組成，每組用 點(dot) 隔開，像這樣 xxxxx.yyyyy.zzzzz；x、y，和 z 分別代表了 header、payload，和signature，接下來會分別再對這三部份的內容用途進行說明。
+可以先提到的是 header 和 payload 只是 base64加密，可以透過在瀏覽器的 console 使用 atob() 轉換回原來的訊息，比如說官網的範例： eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+把中間 payload 的部份透過 atob 轉換：
+atob(&#39;eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ&#39;) // &#39;{&#34;sub&#34;:&#34;1234567890&#34;,&#34;name&#34;:&#34;John Doe&#34;,&#34;iat&#34;:1516239022}&#39; 就可以看到原始資訊是 subject (sub)、name，和 issue at (iat)。...</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-10-29 23:47:11 +0800 CST'>October 29, 2022</span>&nbsp;·&nbsp;Yu-Pang</footer>
+  <a class="entry-link" aria-label="post link to JWT簡介 - 使用Node.js" href="https://AlliesChen.github.io/posts/jwt_with_node_js/"></a>
+</article>
+
+<article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://AlliesChen.github.io/%3Cimage%20path/url%3E" alt="">
+</figure>
+  <header class="entry-header">
+    <h2>Derivative
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>這篇文章是我學習 MIT 18.01SC Session 1 及 Session 2 做的學習筆記，希望能夠幫助閱眾更容易地吸收課程中的內容。
+這篇主要會輔助說明課程中導數的用途(查資料歸納出來的)，並說明 EXAMPLE 2 裡提到要用二項式定理細部來看是怎麼來的。 EXAMPLE 1 因為課程講義和課程影片中就蠻清楚了，就不多做筆記了。
+這篇文章會涉及到 導數(derivative) 二項式定理(binomial theorem) 基礎知識需求 切線(tangent line)和割線(secant line) – 參考：math is fun 斜率(slope) – 參考：math is fun 線性方程式(linear equation) – 參考：math is fun 組合(combination)與排列(permutation) – 參考：math is fun 前言 關於導數 (derivative) 的概念 18.01SC 講的簡明扼要，但又舉了很多深度的例子啟發思考。切得更細，以及更多小練習題，可以看 Khan Academy - Differential Calculus 下的 Unit: Derivatives: definition and basic rules，從 Average vs. instantaneous rate of change 這段到 Derivative definition 該段的 Formal definition of the derivative as a limit。...</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-10-22 00:53:05 +0800 CST'>October 22, 2022</span>&nbsp;·&nbsp;Yu-Pang</footer>
+  <a class="entry-link" aria-label="post link to Derivative" href="https://AlliesChen.github.io/posts/derivative/"></a>
+</article>
+
+<article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://AlliesChen.github.io/%3Cimage%20path/url%3E" alt="">
+</figure>
+  <header class="entry-header">
+    <h2>WTM - D2 workshop 活動心得
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>活動表訂從9:40到17:30，實際製作應該是5個小時左右，當天是一組四個組員，兩個工程師搭兩個設計師。
+題目是 WTM 官網註冊頁及首頁，我只做了首頁…另一位工程師除了註冊頁，還能給大家開發及設計的建議，希望自己也能慢慢朝這個方向邁進。
+這次實作要的技術東西都看過，都沒自己深入想過、做過😅，沒能好好的判斷作法，寫個筆記警惕一下自己：
+Web Vitals &lt;img&gt;載入造成的版面位移，忘了寫個預設值的情況下可能影響web指標中的累積佈局偏移(CLS)，而且使用者要點東西的時候版面跳掉應該是蠻差的體驗。
+React React 18 的 useEffect 在 render 時會跑兩次，原因參考這篇文章。
+正常在元件中使用 setTimeout 來觸發 re-render 拿 state 不會有更新位址的問題，想太多了 - 寫了個例子。這個作法我用來實踐題目中輪播圖功能。
+會有事的是在Line群上看到群友提出的這個情境；在useEffect中使用setTimeout必須配合 useRef 來更新 re-render 後的 state 位址，才能穩定的每秒倒數並考慮更新的 state - 該情境可行的解法。
+至於不會穩定的每秒倒數則是我嘗試想解題時的這個例子；每次觸發按鈕確實更新了 log 中的 state，但計時也會跟著重置，連按的情況下就會等最後一下按完開始算一秒才有 log。😥
+Tailwind CSS Tailwind CSS 預設的 utilities 想用自訂值只要個加方框…
+透過CDN引入一樣可以寫 configure, utilities 和用官方 plugin，作法參考官方文件。我應用這個在漢堡選單的展開，寫了個影格及動畫。
+關於codesandbox 不知道怎麼解，但純記錄下來：
+嘗試了在 codesandbox 用非CDN的方式引入 Tailwind CSS，看了幾個設定好的環境，不是把 stylesheet 整個輸出出來，就是要改Node.js做環境，但我只是想要不顯示scrollbar…。
+環境跑 HMR 時好像會讓 useEffect 變得怪怪的，有狀態殘留、重複觸發，但重整後又沒事了，也可能是我的寫法不安全造成的？🤔
+沒有確認好展示時要用的環境，雖然開發時有跟工程夥伴說好用codesandbox的mobile preview為基準開發，但它這個preview就算是用內建的open in new window，版面也會變得不同，也沒再跟全部組員確認demo時會用什麼環境，結果就有很重要的東西跑板了…...</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-09-26 19:58:58 +0800 CST'>September 26, 2022</span>&nbsp;·&nbsp;Yu-Pang</footer>
+  <a class="entry-link" aria-label="post link to WTM - D2 workshop 活動心得" href="https://AlliesChen.github.io/posts/wtm_d2_workshop/"></a>
+</article>
+
+<article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://AlliesChen.github.io/%3Cimage%20path/url%3E" alt="">
+</figure>
+  <header class="entry-header">
+    <h2>TypeScript：Union被判為Intersection
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>這篇文章的撰寫緣由是我在React中某一元件要傳入兩種不同的物件陣列：
+interface UserInfo { generalInfo: GeneralInfoTemplate; educationExps: Array&lt;EducationExpInfoTemplate&gt;; practicalExps: Array&lt;PracticalExpInfoTemplate&gt;; } type UserInfoKeys = Exclude&lt;keyof UserInfo, &#34;generalInfo&#34;&gt;; interface Props { block: UserInfoKeys; blockKey: string; setInputs: React.Dispatch&lt;React.SetStateAction&lt;UserInfo[UserInfoKeys]&gt;&gt;; setAppUserData: React.Dispatch&lt;React.SetStateAction&lt;UserInfo&gt;&gt;; } 簡單來說，我想把const [state, setState] = React.useState()這類的setState用props傳給子元件，然後這個setState是設置UserInfo物件中的educationExps「或」praticalExps用的，結果當我使用setInputs把這兩種之一的值傳進時報錯了。
+這個錯誤，也是簡單來說，他說我educationExps沒有praticalExps的屬性，praticalExps沒有educationExps屬性…(怎麼聯集變交互比對了？)
+我把這個狀況另外寫個測試重現出來如下：
+CodeSandbox連結(問題)
+type Foo = { one: number; two: number }; type Bar = { three: number; four: number }; type Foobar = Foo | Bar; interface Props { value: Foobar; setValue: React.Dispatch&lt;React.SetStateAction&lt;Foobar&gt;&gt;; } /** This will be used in App component below */ function Beep(props: Props) { const boop = Object....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-08-17 21:43:18 +0800 CST'>August 17, 2022</span>&nbsp;·&nbsp;Yu-Pang</footer>
+  <a class="entry-link" aria-label="post link to TypeScript：Union被判為Intersection" href="https://AlliesChen.github.io/posts/unexpected_intersection_type/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="https://AlliesChen.github.io/posts/page/2/">Next »</a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://AlliesChen.github.io/">YP&#39;s Dev Memo</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

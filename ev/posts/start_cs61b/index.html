@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>開始 CS61B 學習資料結構及演算法 | YP&#39;s Dev Memo</title>
+<meta name="keywords" content="first">
+<meta name="description" content="選擇哪個版本？怎麼啟用自動評分，開始 CS61B 的學習！">
+<meta name="author" content="Yu-Pang">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.c5ad9f205171fab820252a87a0292578dcaa85c950f40ab21addf6cb9611c26a.css" integrity="" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://AlliesChen.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://AlliesChen.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://AlliesChen.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://AlliesChen.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://AlliesChen.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript> <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"
+  integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js"
+  integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true },
+      ],
+      
+      throwOnError: false,
+    });
+  });
+</script>
+ 
+<meta property="og:title" content="開始 CS61B 學習資料結構及演算法" />
+<meta property="og:description" content="選擇哪個版本？怎麼啟用自動評分，開始 CS61B 的學習！" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://AlliesChen.github.io/posts/start_cs61b/" />
+<meta property="og:image" content="https://AlliesChen.github.io/images/a_computer_programmer.jpg" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-03-13T20:34:04&#43;08:00" />
+<meta property="article:modified_time" content="2024-03-13T20:34:04&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://AlliesChen.github.io/images/a_computer_programmer.jpg" />
+<meta name="twitter:title" content="開始 CS61B 學習資料結構及演算法"/>
+<meta name="twitter:description" content="選擇哪個版本？怎麼啟用自動評分，開始 CS61B 的學習！"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://AlliesChen.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "開始 CS61B 學習資料結構及演算法",
+      "item": "https://AlliesChen.github.io/posts/start_cs61b/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "開始 CS61B 學習資料結構及演算法",
+  "name": "開始 CS61B 學習資料結構及演算法",
+  "description": "選擇哪個版本？怎麼啟用自動評分，開始 CS61B 的學習！",
+  "keywords": [
+    "first"
+  ],
+  "articleBody": "因為剛開始要啟動這個課程的資源時繞了一點路，想簡單分享一下：\n可以上哪個版本？ 怎麼提交作業？ 前言 CS61B 是 UC Berkeley 在電腦科學的「入門課」，關於它的討論在 PTT、一畝三分地等論壇，或是直接 google 都可以找到學習心得的分享，就不多在此贅述這門課程的特點。\n課程以英文以及 Java 程式語言來教學，但不要求有 Java 基礎，課程中會逐步帶到。反倒是因為此課有前置課程– CS61A，以 Python 程式語言教學電腦科學基礎的課程，在 CS61B 中會常聽到教授以 Python 作為對比來幫助理解。\n延伸閱讀：CS61A 跟 CS61B 的差別\n可以上哪個版本？ 首先可以打開瀏覽器，搜尋：CS61B，就能看到最新一季的課程頁面；以這篇文章撰寫的時間是 CS61B Spring 2024，在看到網頁中 Course Info 這個頁面的最下面，有個 “Auditing CS61B” 的條目– 提到目前可以使用的 “public” autograder 是 Spring 2021。這門課程是透過 Gradescope 的服務來做自動化評分，而此頁提供的課程碼– MB7ZPY，開啟的畫面如下圖。\n上圖中，可以看到還有個 CS61B Spring 2019，那就是非 “public” 的課程碼開啟的– 如果是直接從課程網站的 week 1 開始跟著做，基本上影片都能看，直到跟著 Lab 1 的教學到了註冊 Gradescope 並開始了第一個提交才會發現…提交會失敗呀😅。\n怎麼提交作業？ 先回到有公開評分器的 CS61B SP21 的頁面，跟著 Lab 1 的說明：\nclone 下 starter files\n完成指定功能的撰寫\n推上 github repo；整包 starter files 一起推就好，不用分資料夾開\n進到 Gradescope CS 61B Spring 2021 課程中上選 Lab 1，再選擇你推上的 github repo，並選擇 branch “main” (現在預設名稱，過去則為 “master”)\n等待評分完成✨\n如果對於完成這個流程還是不太清楚，有前輩們也寫過更詳細的步驟及截圖可以參考：\n[cs61b] 建立作業github repo並clone官方starter code＋註冊gradescope | Yun-Chi Pang (yunchipang.github.io) CS61B autograder排坑篇 - 知乎 (zhihu.com) 以上，感謝您的閱讀，希望能看到更多人加入學習這門課~\n",
+  "wordCount" : "113",
+  "inLanguage": "en",
+  "image":"https://AlliesChen.github.io/images/a_computer_programmer.jpg","datePublished": "2024-03-13T20:34:04+08:00",
+  "dateModified": "2024-03-13T20:34:04+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Yu-Pang"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://AlliesChen.github.io/posts/start_cs61b/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "YP's Dev Memo",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://AlliesChen.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://AlliesChen.github.io/" accesskey="h" title="YP&#39;s Dev Memo (Alt + H)">YP&#39;s Dev Memo</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://AlliesChen.github.io/categories/" title="categories">
+                    <span>categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://AlliesChen.github.io/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/AlliesChen" title="github">
+                    <span>github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://AlliesChen.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://AlliesChen.github.io/posts/">Posts</a></div>
+    <h1 class="post-title">
+      開始 CS61B 學習資料結構及演算法
+    </h1>
+    <div class="post-description">
+      選擇哪個版本？怎麼啟用自動評分，開始 CS61B 的學習！
+    </div>
+    <div class="post-meta"><span title='2024-03-13 20:34:04 +0800 CST'>March 13, 2024</span>&nbsp;·&nbsp;Yu-Pang&nbsp;|&nbsp;<a href="https://github.com/AlliesChen/website-hugo/blob/main/content/posts/start_cs61b.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#可以上哪個版本">可以上哪個版本？</a></li>
+    <li><a href="#怎麼提交作業">怎麼提交作業？</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>因為剛開始要啟動這個課程的資源時繞了一點路，想簡單分享一下：</p>
+<ul>
+<li>可以上哪個版本？</li>
+<li>怎麼提交作業？</li>
+</ul>
+<h2 id="前言">前言<a hidden class="anchor" aria-hidden="true" href="#前言">#</a></h2>
+<p>CS61B 是 UC Berkeley 在電腦科學的「入門課」，關於它的討論在 PTT、一畝三分地等論壇，或是直接 google 都可以找到學習心得的分享，就不多在此贅述這門課程的特點。</p>
+<p>課程以英文以及 Java 程式語言來教學，但不要求有 Java 基礎，課程中會逐步帶到。反倒是因為此課有前置課程&ndash; CS61A，以 Python 程式語言教學電腦科學基礎的課程，在 CS61B 中會常聽到教授以 Python 作為對比來幫助理解。</p>
+<p>延伸閱讀：<a href="https://csdiy.wiki/%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/CS61A/">CS61A 跟 CS61B 的差別</a></p>
+<h2 id="可以上哪個版本">可以上哪個版本？<a hidden class="anchor" aria-hidden="true" href="#可以上哪個版本">#</a></h2>
+<p>首先可以打開瀏覽器，搜尋：CS61B，就能看到最新一季的課程頁面；以這篇文章撰寫的時間是 <strong>CS61B Spring 2024</strong>，在看到網頁中 <a href="https://sp24.datastructur.es/policies/#auditing-cs61b">Course Info</a> 這個頁面的最下面，有個 &ldquo;Auditing CS61B&rdquo; 的條目&ndash; 提到目前可以使用的 &ldquo;public&rdquo; autograder 是 Spring 2021。這門課程是透過 <a href="https://www.gradescope.com/">Gradescope</a> 的服務來做自動化評分，而此頁提供的課程碼&ndash; <em>MB7ZPY</em>，開啟的畫面如下圖。</p>
+<p><img loading="lazy" src="/images/start_cs61b_gradescope_page_screenshot.jpg" alt="start_cs61b_gradescope_page_screenshot.jpg"  />
+</p>
+<p>上圖中，可以看到還有個 CS61B Spring 2019，那就是非 &ldquo;public&rdquo; 的課程碼開啟的&ndash; 如果是直接從課程網站的 week 1 開始跟著做，基本上影片都能看，直到跟著 <a href="https://sp24.datastructur.es/labs/lab01/">Lab 1</a> 的教學到了註冊 Gradescope 並開始了第一個提交才會發現&hellip;提交會失敗呀😅。</p>
+<h2 id="怎麼提交作業">怎麼提交作業？<a hidden class="anchor" aria-hidden="true" href="#怎麼提交作業">#</a></h2>
+<p>先回到有公開評分器的 <a href="https://sp21.datastructur.es/materials/lab/lab1/lab1">CS61B SP21 的頁面</a>，跟著 Lab 1 的說明：</p>
+<ol>
+<li>
+<p>clone 下 starter files</p>
+</li>
+<li>
+<p>完成指定功能的撰寫</p>
+</li>
+<li>
+<p>推上 github repo；整包 starter files 一起推就好，不用分資料夾開</p>
+</li>
+<li>
+<p>進到 Gradescope  CS 61B Spring 2021 課程中上選 Lab 1，再選擇你推上的 github repo，並選擇 branch &ldquo;main&rdquo; (現在預設名稱，過去則為 &ldquo;master&rdquo;)</p>
+</li>
+<li>
+<p>等待評分完成✨</p>
+</li>
+</ol>
+<p>如果對於完成這個流程還是不太清楚，有前輩們也寫過更詳細的步驟及截圖可以參考：</p>
+<ul>
+<li>[<a href="https://yunchipang.github.io/ucberkeley-cs61b-sp18-getting-started.html">cs61b] 建立作業github repo並clone官方starter code＋註冊gradescope | Yun-Chi Pang (yunchipang.github.io)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/115229260">CS61B autograder排坑篇 - 知乎 (zhihu.com)</a></li>
+</ul>
+<p>以上，感謝您的閱讀，希望能看到更多人加入學習這門課~</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://AlliesChen.github.io/tags/first/">first</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://AlliesChen.github.io/posts/page-flip_animation_with_css/">
+    <span class="title">Next »</span>
+    <br>
+    <span>透過 CSS 製作書本翻頁效果</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://AlliesChen.github.io/">YP&#39;s Dev Memo</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
