@@ -62,19 +62,19 @@ editPost:
 
 ## 套用主題
 
-這裡應該與作業系統無關，要幫我們的網站套用佈景主題，可以到[Hugo主題庫](https://themes.gohugo.io/)選擇自己喜歡的，步驟上同參考文章，但一樣有遇到一些情況：
+這裡應該與作業系統無關，要幫我們的網站套用佈景主題，可以到 [Hugo主題庫](https://themes.gohugo.io/) 選擇自己喜歡的，步驟上同參考文章，但一樣有遇到一些情況：
 
-- 參考文章內提到要把下載下來主題的static、layouts換成主題資料夾內的，但我使用的主題[PaperMod](https://adityatelange.github.io/hugo-PaperMod/)沒有static只有layouts，這部份就只要取代layouts就好。
+- 參考文章內提到要把下載下來主題的 static、layouts 換成主題資料夾內的，但我使用的主題 [PaperMod](https://adityatelange.github.io/hugo-PaperMod/) 沒有 static 只有 layouts ，這部份就只要取代 layouts 就好。
 
-- 要記得看選擇的主題的GitHub說明來確認如何使用及操作；我一開始想用Doks這個主題，但他似乎有用到Node.js npm，我不能在我的網站資料夾下(`C:\Hugo\website-hugo`)使用 `hugo server -D` 來啟動本地端伺服器(測試用)。
+- 要記得看選擇的主題的 GitHub 說明來確認如何使用及操作；我一開始想用 Doks 這個主題，但他似乎有用到Node.js npm，我不能在我的網站資料夾下 (`C:\Hugo\website-hugo`) 使用 `hugo server -D` 來啟動本地端伺服器(測試用)。
 
-- 另一方面，在config.toml，或是config.yml（也是取決於選擇的主題設定），那個 `theme: <theme_name>` ，是取決於抓下來的主題資料夾的名稱的，像Doks這個主題我clone下來是得到my-doks-site（可以改名），然後是用toml格式，我就要寫 `theme = "my-doks-site"`。
+- 另一方面，在 config.toml ，或是 config.yml（也是取決於選擇的主題設定），那個 `theme: <theme_name>` ，是取決於抓下來的主題資料夾的名稱的，像 Doks 這個主題我 clone 下來是得到 my-doks-site（可以改名），然後是用 toml 格式，我就要寫 `theme = "my-doks-site"`。
 
 ## 使用模板文章
 
-可能也取決於下載的主題，我使用的佈景主題PaperMod的[文章模板](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-installation/#sample-pagemd)；將這個內容複製並依照文章指示放到archetypes/post.md內，就可以用 `hugo new --kind post <filename>.md` 這個指令在content資料夾下產生檔案，再移到posts資料夾內就可以在網站中看到了。
+可能也取決於下載的主題，我使用的佈景主題 PaperMod 的[文章模板](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-installation/#sample-pagemd)；將這個內容複製並依照文章指示放到 archetypes/post.md 內，就可以用 `hugo new --kind post <filename>.md` 這個指令在 content 資料夾下產生檔案，再移到 posts 資料夾內就可以在網站中看到了。
 
-他有一些設定要注意，像是date，要把UTC的時區寫正確，像台灣是 `+08:00` ，如果沒寫的話，好像會被認為是未來貼文，所以就不會顯示在網站上。（待測試：感覺可以用來預約發文？）
+他有一些設定要注意，像是 date，要把 UTC 的時區寫正確，像台灣是 `+08:00` ，如果沒寫的話，好像會被認為是未來貼文，所以就不會顯示在網站上。（待測試：感覺可以用來預約發文？）
 
 ```markdown
 ---
@@ -90,27 +90,27 @@ ShowWordCount: false
 
 然後，可能因為我用的是中文， `ShowReadingTime` 和 `ShowWordCount` 這兩個顯示的數值不太可靠，所以我把它們改為false（不顯示）。
 
-> 部份設定像weight，可以在官網[Front Matter](https://gohugo.io/content-management/front-matter/)的主題找到更詳細的說明。（因為有些是主題客製的，就要參考主題的文件說明了）
+> 部份設定像 weight，可以在官網 [Front Matter](https://gohugo.io/content-management/front-matter/) 的主題找到更詳細的說明。（因為有些是主題客製的，就要參考主題的文件說明了）
 
 ## 部署到GitHub
 
 推送部份就如參考文章中所述，但一樣有遇到問題：
 
-GitHub頁面開起來沒有吃到stylesheet，就是純文字，看了console發現有跳錯誤： `Failed to find a valid digest in the 'integrity' attribute for resource css with computed SHA-256 integrity hugo`
+GitHub 頁面開起來沒有吃到 stylesheet，就是純文字，看了 console 發現有跳錯誤： `Failed to find a valid digest in the 'integrity' attribute for resource css with computed SHA-256 integrity hugo`
 
-這邊借助Google大神，找到了[這個辦法](https://stackoverflow.com/a/65052963/18972098)：
+這邊借助 Google 大神，找到了[這個辦法](https://stackoverflow.com/a/65052963/18972098)：
 
-1. 用編輯器打開 `head.html` ，這邊可能又依主題不同檔案位址不同，PaperMod我是到複製的layouts資料夾(不是themes裡的)，然後partials資料夾。
+1. 用編輯器打開 `head.html` ，這邊可能又依主題不同檔案位址不同，PaperMod 我是到複製的 layouts 資料夾(不是 themes 裡的)，然後 partials 資料夾。
 
-2. 把 `integrity` 照上面Stackoverflow的回答，改為`""`：（不只一條有integrity這個屬性，但我只動rel="preload stylesheet"這條的就可以了）
+2. 把 `integrity` 照上面Stackoverflow的回答，改為 `""`：（不只一條有 integrity 這個屬性，但我只動 rel="preload stylesheet" 這條的就可以了）
    
    ```html
    <link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" integrity="" rel="preload stylesheet" as="style">
    ```
 
-另外，我有用參考文章中提及的另一篇參考所寫到，再開一個GitHub repo，放build到public前的原始檔案；因為PaperMod這個主題的模板文章，可以在各篇文章標題作者旁用一個Suggest Change的連結，目的就如字面上所示，但因為public做出來都是html了，連過去也不好閱讀和發pull request，乾脆再開一個放原始的.md檔們。
+另外，我有用參考文章中提及的另一篇參考所寫到，再開一個 GitHub repo ，放 build 到 public 前的原始檔案；因為 PaperMod 這個主題的模板文章，可以在各篇文章標題作者旁用一個 Suggest Change 的連結，目的就如字面上所示，但因為 public 做出來都是 html了，連過去也不好閱讀和發 pull request ，乾脆再開一個放原始的 .md 檔們。
 
-- 在public外的這個資料夾，我新增了 `.gitignore` ，把public和themes排除在推送的內容外，因為public的內容已經在blog部署的repo上了，而themes的內容都是抓下來的，沒必要推上去。
+- 在 public 外的這個資料夾，我新增了 `.gitignore` ，把 public 和 themes 排除在推送的內容外，因為 public 的內容已經在 blog 部署的 repo 上了，而 themes 的內容都是抓下來的，沒必要推上去。
 
 ## 深入學習
 
