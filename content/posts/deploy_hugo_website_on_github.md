@@ -100,7 +100,7 @@ GitHub 頁面開起來沒有吃到 stylesheet，就是純文字，看了 console
 
 這邊借助 Google 大神，找到了[這個辦法](https://stackoverflow.com/a/65052963/18972098)：
 
-1. 用編輯器打開 `head.html` ，這邊可能又依主題不同檔案位址不同，PaperMod 我是到複製的 layouts 資料夾(不是 themes 裡的)，然後 partials 資料夾。
+1. 我使用的主題-- PaperMod，要在 themes/layouts/<your_theme> 裡找到 `head.html` ，複製它到外層的 layouts/partials/ 下
 
 2. 把 `integrity` 照上面Stackoverflow的回答，改為 `""`：（不只一條有 integrity 這個屬性，但我只動 rel="preload stylesheet" 這條的就可以了）
    
@@ -112,10 +112,26 @@ GitHub 頁面開起來沒有吃到 stylesheet，就是純文字，看了 console
 
 - 在 public 外的這個資料夾，我新增了 `.gitignore` ，把 public 和 themes 排除在推送的內容外，因為 public 的內容已經在 blog 部署的 repo 上了，而 themes 的內容都是抓下來的，沒必要推上去。
 
+## 加入 LaTeX 支援
+
+參考 [Mathematics in Markdown | Hugo (gohugo.io)](https://gohugo.io/content-management/mathematics/) 官方的說明，但 Step 3 的部份需要配合使用的主題改做法，以 PaperMod 來說，如果照官方作法，會把取代掉 PaperMod 的 baseof.html，結果就是沒有內容 (body) 了。
+
+在 themes/PaperMod/layouts/_default/ 下看到 baseof.html，會發現 head 的來源是上一層的 partials 下的 head.html，打開檔案可以發現裡面會引入資料夾同一層的 extend_head.html 檔案中說明了這個就是用來加東西到 \<head\> 裡的。
+
+於是回到最外層，在 layouts/partials/ 下建立一個同名檔案 extend_head.html 並放入官方文件裡的內容：
+
+```
+{{ if .Param "math" }}
+    {{ partialCached "math.html" . }}
+{{ end }}
+```
+
+完成🎉
+
 ## 深入學習
 
 [Hugo - Static Site Generator | Tutorial - YouTube](https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3) -- 這個影片清單有更多關於 Hugo 設定的說明。
 
 ## 題外話：Markdown編輯器
 
-因為 Hugo 使用的檔案格式是 .md (markdown)，除了最強編輯器 VSCode 可以編輯外，我也會使用 [MarkText](https://github.com/marktext/marktext) 以及 [Obsidian](https://obsidian.md/) 這兩款編輯器；介面比 VSCode 更像個文件編輯器， MarkText 用來開單個檔案，因為 Obsidian 需要透過指定資料夾的方式才能開檔案，但也因此 Obsidian 很適合建立及管理文件庫，端看使用習慣。
+因為 Hugo 使用的檔案格式是 .md (markdown)，除了 VSCode 可以編輯外，我也會使用 [MarkText](https://github.com/marktext/marktext) 以及 [Obsidian](https://obsidian.md/) 這兩款編輯器；介面比 VSCode 更像個文件編輯器， MarkText 用來開單個檔案，因為 Obsidian 需要透過指定資料夾的方式才能開檔案，但也因此 Obsidian 很適合建立及管理文件庫，端看使用習慣。
