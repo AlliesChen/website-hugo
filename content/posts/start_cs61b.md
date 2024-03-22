@@ -25,11 +25,11 @@ ShowWordCount: false
 ShowRssButtonInSectionTermList: true
 UseHugoToc: true
 cover:
-    image: "/images/a_computer_programmer.jpg" # image path/url
+    image: "images/a_computer_programmer.jpg" # image path/url
     alt: "a computer grammer sitting on before a white board" # alt text
     caption: "imagine learning computer science" # display caption under cover
     relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
+    hidden: false # only hide on current single page
 editPost:
     URL: "https://github.com/AlliesChen/website-hugo/blob/main/content"
     Text: "Suggest Changes" # edit text

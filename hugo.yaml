@@ -14,7 +14,9 @@ params:
       url: "https://dev.to/allieschen"
   assets:
     disableFingerprinting: true
-      
+  cover:
+    responsiveImages: false
+ 
 menu:
   main:
     - identifier: archives
