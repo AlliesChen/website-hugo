@@ -7,12 +7,13 @@ params:
   homeInfoParams:
     Title: YP的開發備忘
     Content: Hi! 我在 2 年前轉職為前端工程師，現在除了網頁應用開發，也透過大學課程補足基礎知識，希望技術筆記能幫助自己彙整所學，也幫助有需要的人一起學習。
-
   socialIcons: # optional
     - name: github
       url: "https://github.com/AlliesChen/"
     - name: dev
       url: "https://dev.to/allieschen"
+  assets:
+    disableFingerprinting: true
       
 menu:
   main:

@@ -98,15 +98,7 @@ ShowWordCount: false
 
 GitHub 頁面開起來沒有吃到 stylesheet，就是純文字，看了 console 發現有跳錯誤： `Failed to find a valid digest in the 'integrity' attribute for resource css with computed SHA-256 integrity hugo`
 
-這邊借助 Google 大神，找到了[這個辦法](https://stackoverflow.com/a/65052963/18972098)：
-
-1. 我使用的主題-- PaperMod，要在 themes/layouts/<your_theme> 裡找到 `head.html` ，複製它到外層的 layouts/partials/ 下
-
-2. 把 `integrity` 照上面Stackoverflow的回答，改為 `""`：（不只一條有 integrity 這個屬性，但我只動 rel="preload stylesheet" 這條的就可以了）
-   
-   ```html
-   <link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" integrity="" rel="preload stylesheet" as="style">
-   ```
+這邊借助 Google 大神，找到了[這個辦法](https://stackoverflow.com/a/73070453/18972098)。
 
 另外，我有用參考文章中提及的另一篇參考所寫到，再開一個 GitHub repo ，放 build 到 public 前的原始檔案；因為 PaperMod 這個主題的模板文章，可以在各篇文章標題作者旁用一個 Suggest Change 的連結，目的就如字面上所示，但因為 public 做出來都是 html了，連過去也不好閱讀和發 pull request ，乾脆再開一個放原始的 .md 檔們。
 
