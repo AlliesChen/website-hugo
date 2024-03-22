@@ -1,7 +1,7 @@
 baseURL: https://AlliesChen.github.io/
 languageCode: zh-tw
 title: YP's Dev Memo
-theme: PaperMod
+theme: ["PaperMod"]
 params:
   math: true
   homeInfoParams:
@@ -31,5 +31,15 @@ menu:
 
 markup:
   goldmark:
-    renderer:
-      unsafe: true
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+          - - \[
+            - \]
+          - - $$
+            - $$
+          inline:
+          - - \(
+            - \)
+        enable: true
