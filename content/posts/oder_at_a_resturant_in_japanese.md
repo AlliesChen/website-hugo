@@ -8,7 +8,7 @@ author: "Yu-Pang"
 # author: ["Me", "You"] # multiple authors
 showToc: true
 TocOpen: false
-draft: false
+draft: true
 hidemeta: false
 comments: false
 description: "食堂での注文やお会計に使える表現を覚えてしましょう！"
@@ -36,7 +36,7 @@ editPost:
     appendFilePath: true # to append file path to Edit link
 ---
 
-最近は日本で旅行する予定ですので、旅行で役立つフレーズや<ruby>便利<rt>べんり</rt></ruby>な<ruby>表現<rt>ひょうげん</rt></ruby>を先生に<ruby>学<rt>まな</rt></ruby>んでいます。
+最近は日本で旅行する予定ですので、日本語の先生から旅行で役立つフレーズや<ruby>便利<rt>べんり</rt></ruby>な<ruby>表現<rt>ひょうげん</rt></ruby>を<ruby>学<rt>まな</rt></ruby>んでいます。
 
 > 私は italki で日本語の先生を探します。<ruby>記事<rt>きじ</rt></ruby>の内容は、[さゆり先生](https://www.italki.com/en/teacher/8512356)と[えみ先生](https://www.italki.com/en/teacher/7219065)から受けた<ruby>授業<rt>じゅじゅぎょう</rt></ruby>に<ruby>基<rt>もと</rt>づいて</ruby>います。先生方に心から感謝します。
 
