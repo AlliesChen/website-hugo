@@ -50,3 +50,5 @@ markup:
           - - \(
             - \)
         enable: true
+    renderer:
+      unsafe: true
