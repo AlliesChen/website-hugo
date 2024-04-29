@@ -25,7 +25,7 @@ ShowWordCount: false
 ShowRssButtonInSectionTermList: true
 UseHugoToc: true
 cover:
-    image: "/images/a_child_waves_hand_in_spring.jpg" # image path/url
+    image: "/images/a_magic_book_with_page_flipped_and_glowing_inside_on_a_table_in_a_classroom.jpg" # image path/url
     alt: "<alt text>" # alt text
     caption: "<text>" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -42,16 +42,15 @@ editPost:
 
 ## TL;DR
 
-成果: https://codesandbox.io/s/page-flippable-book-5h5ktm?file=/src/Page.tsx
+[Repo](https://github.com/AlliesChen/page-flippable_book/tree/main) | [Live demo](https://allieschen.github.io/page-flippable_book/)
 
-<iframe src="https://codesandbox.io/embed/page-flippable-book-5h5ktm?fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="page-flippable book"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
+- 透過 CSS 的 `translateZ` 做出書頁的正反面
 
-- 透過 `translateZ` 做出書頁的正反面
+```css
+.back {
+  transform: translateZ(-1px);
+}
+```
 
 > <u>2023/9/22</u>
 > 基於前端社群網友的建議，我把原先用 `opacity` 變換做出的頁面正反面，換成靜態、單純加在 CSS class-- `back` 中的 `translateZ`，另外，為了讓它能正確作用，也需要在 `page` 這個 CSS class 中加入 `transform-style: preserve-3d`，如此一來，應該多少能減輕瀏覽器的運算負擔。
