@@ -2,7 +2,7 @@
 title: "日本語で食堂での注文"
 date: 2024-03-23T17:39:50+08:00
 # weight: 1
-# aliases: ["/Oder_at_a_resturant_in_japanese"]
+# aliases: ["/Order_at_a_resturant_in_japanese"]
 tags: ["first"]
 author: "Yu-Pang"
 # author: ["Me", "You"] # multiple authors
@@ -12,7 +12,7 @@ draft: true
 hidemeta: false
 comments: false
 description: "食堂での注文やお会計に使える表現を覚えてしましょう！"
-canonicalURL: "https://canonical.url/to/page"
+canonicalURL: "https://allieschen.github.io/posts/order_at_a_resturant_in_japanese/"
 disableHLJS: true # to disable highlightjs
 disableShare: false
 disableHLJS: false
@@ -44,7 +44,7 @@ editPost:
 
 ##  <ruby>注文<rt>ちゅうもん</rt></ruby>する前に
 
-もし店の外にメニューがない場合、<ruby>値段<rt>ねだん</rt></ruby>によってこの店で食事をするかどうかを店員さんに<ruby>尋ね<rt>たずね</rt></ruby>ましょう：
+もし店の外にメニューがない場合、<ruby>値段<rt>ねだん</rt></ruby>によってこの店で食事をするかどうか、店員さんに<ruby>尋ね<rt>たずね</rt></ruby>ましょう：
 
 「**すみません、メニューを見せていただけますか？**」
 
